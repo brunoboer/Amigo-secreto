@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amigo Secreto</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #fff7ed; margin: 0; display: flex; justify-content: center; }
+  main { width: 100%; max-width: 380px; padding: 40px 20px; text-align: center; }
+  img { width: 100%; border-radius: 14px; }
+  h1 { font-size: 28px; }
+  input, button { width: 100%; box-sizing: border-box; font-size: 20px; padding: 14px; margin-top: 12px; border-radius: 10px; border: 2px solid #d97706; }
+  input { text-align: center; text-transform: uppercase; letter-spacing: 3px; }
+  button { background: #d97706; color: #fff; font-weight: bold; }
+  #res { margin-top: 28px; font-size: 18px; }
+  #res b { display: block; font-size: 34px; color: #b45309; margin-top: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="logo.jpeg" alt="Família">
+  <h1>🎁 Amigo Secreto</h1>
+  <p>Digite a senha que o organizador te mandou</p>
+  <input id="senha" autocomplete="off" autocapitalize="characters" maxlength="8">
+  <button id="ok">Ver meu amigo secreto</button>
+  <div id="res"></div>
+</main>
+<script>
+const dados = {"iter": 200000, "blocos": [{"s": "34f9dbb05e344ed2db88f41e9feab42d", "c": "999f38eaef0c1b92c18206912c4256dfa25dcd6608f38148e4515fb3dfc7b6b3290abeb06f51d814af5a2984475017276fb4a59979b25bcecc8e50012f3c3310", "t": "7d12d87e0c92807400b8463d192996c9"}, {"s": "d54a3953062d4ffb40fb1e7b0e1d61f7", "c": "a3b1caed47ea13284a8337cc07b614dfe54b2a9663d3fd5b8616cb6a3994e287f93c14d855f04a2b4b5ba220db21a106ea007dbf1d597e79070f0eef0f48d05f", "t": "13045a594798f0e1258dccd61f59cb7d"}, {"s": "ce81aacaf8249e80c4d102b38a5f9ded", "c": "7f891f2b4d72fe431ba94fbe8368c2858d2341c6482d8fbf3b117f8e81e921048b0c5aec83b5bf2a4c8bbc85c14fa3827b4e06b859ebae825e7e1c0ea94eb532", "t": "e6fe53172a38ed96c318d7e022c3b6a5"}, {"s": "73cfb5f68c0da0d0ac0b917cf90c6367", "c": "a351ef8063555183fb8f51dcc9d4f68298342cfb1e2b5baaf80938cb5f41ef032d3a7ec09a7ef2aca463c2518d21080a114b6da4a57da1cd3ae69dc3a1edf7e8", "t": "65fb80a0a17e1cbbcf68fbdb51affc5d"}, {"s": "1f35db9f60f5cf518b324f2281a1ce8b", "c": "d3c0fd4e0fafbc73c13f60d99197306081c3da5d46638414d8614aac40ff4f55ae094a92e254785400b81e4cdae81026f29e49a92d3d9c377beb6b6b74954df1", "t": "73aef3920203f2a3ac15be322599b164"}, {"s": "098c799bfa8d3724d24802cff59a2370", "c": "5a0a33275f82360067dbe99d2996253efe16d6b6541897b953cb9a47f65b6fcd76119b7f68d0de404349e56f36e1a68483d40c6d38343ef811d1e1d4f5aa7eca", "t": "66be44c66273124d73135e9e6f89e1ad"}, {"s": "ab4381f88e8b0374f4887a14affb084b", "c": "30b1f0684a751e91a62de1eaf6dd45db9a15cf3d505bb11b959ccab940ef88b0f7b7442a29793af7173c703796e1b4334239f646c99d84ca81db070d35516464", "t": "dd414e20a85f1492d698277aca1916ae"}, {"s": "9ff9f45802ed89287df24b45ffb38c37", "c": "27a3e9736e093e1e882415becd0bdad7636738fd232ee33f2ad4148f0596ecfe2001372d165af0e57c3cb9bbb6263fa45d8dd06191bb1ef8f5310baf16c055b2", "t": "d8e6b9407386ae98147cf341b7f37694"}, {"s": "0c8d000c8ae0cd0deccf7b381447514a", "c": "a87e7bcd29293e0a52deb846a065aaf4d9b9ef7756b883ba464d5286c2c3cbb95d5c2184332af07dd5cca664292ed957095dbff0c4b5a2241f5b82e5c6fa92b7", "t": "1cde0a6989330e5fe8448e31a7a1469f"}, {"s": "3d40883c4c8d1db9be0c588ba6501ea2", "c": "6e0279e80a562fd9d4098321fc7de4150525bb255a5055897270dba7eae6626acb49db45d06a7b5fc06502ee3ba724758cd11ebd8f716ed6e5df3f8e31a951ee", "t": "b4f98da826adf6a5db7ae22e04610d7f"}, {"s": "1615b52748ca1537f6583f9842b06cd4", "c": "6561d4ed145aa0c7e12df83191568f517260e26227cdb8a3f06d87231722200d000c0633cab1ab044f9c146875b2bd3609c95aaf7782f4fd2c5a188cb76b2556", "t": "0943f0c970745389204d8c0e5010ada6"}, {"s": "702919cf0c11c0f0e114a4c9c0d499d1", "c": "64a5ef6189e46afa08c841fb62efeb10db1996357de108d99632a3c39592dd576d90b8f1647a14b1d9218dad8356270ead342a129eff599b81b1b4d053469595", "t": "416840066f48cc59b4dba20cb1a5d7fd"}, {"s": "3fdedcc8755e7ffab04287dd3e98e113", "c": "8b938e9a9783d2d8a932926cb22a61424d7e3531fd3a2c87b6c2f294611b1b775771514fdb077272cb594ccf3d7183fc86304ec719d2beb39802d945f052bd43", "t": "73177cd811ee0970dedf026e791affb1"}, {"s": "16761196c46d66b34707c135afa4992a", "c": "0111ecee3fdfa424a63c96aeb800e514e71f9182702b54203d73e03e701d0a5ceeffa2b5ee327d7a233308a238fd10db4f4830121ede5015c95b0973e8157d06", "t": "d3ba48bfba107509f64176f4ababf70d"}, {"s": "4ed6d49d8a80dbcf68c22a9e2c5ada88", "c": "d818d87ca9ae2596ec2aeb9b3094b8064352b2afd4008e51132455df93e21910b21b46972c810bfe259fbbfea0fdd7adf4a9ccb4aab945923023f3e9b5b4c70a", "t": "71269be112a1b53626f1bdd8ecdf4614"}, {"s": "81f6b950026f672ec1e45404d25d47ac", "c": "e3a8394f93f178bbf732a989e21c1f2977bcee95e4904e05ecb991a2ff564de2d5f61ceef612baa67ac80444566350dba32fe944c8da843a72fafba273bf1840", "t": "efecc218edb84bf5068627db0916127b"}, {"s": "0c08303c6542d82c751a3198fb9f6ec7", "c": "6117ef91032b8d3acef6abfa10d4a42cc15cb5555ec5e2c3138056299699fdecf52da2ad7900ec702ce1a1c4bdeb9ff97379ff764e5f484bfb00769c8784b8c7", "t": "b65c1896e98eb26b25f61032564ecfca"}, {"s": "f197e1a3a4439af244610f7c78d60f1e", "c": "c5e9ec6ccb9e8dacf0ee41ce306a02c8d9b331769090029f2e6d85435843f2f7c055b87f90f7db8460d68708b27d9cb84f1c30735b3a44a25c6c1638a19bcbc5", "t": "3559cb3c676fa085ec07f53dce6196e0"}, {"s": "1bfcd3edbd7966b998270b548b410a9e", "c": "bd27025d65e2b0fc88334cac8813f6f9ac53d28e7f32a5ccabfc2ec4f0e2ca9b41282969f84487ced2f4de5fa0e27f7b4f109fe8320249a1d36f0529cb7f79b3", "t": "dbb40106ab93d1a68568a8ebc92b869d"}, {"s": "3df8b90c77a5920ad787c8c3c0276e7b", "c": "675ddd33d245bb0d07d439d1242bb69de93479bd7c8c58dfdb634194ff6e3fa27599b1b6500760fb8590e5ea5460cad85368ab2e2aa3feab0b7626f37cd610e8", "t": "f42cec9d88c77470ede3e01404d0875d"}]};
+const hex = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
+
+async function abrir(senha) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(senha), "PBKDF2", false, ["deriveBits"]);
+  for (const b of dados.blocos) {
+    const c = hex(b.c), t = hex(b.t);
+    const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hex(b.s), iterations: dados.iter }, base, (c.length + 16) * 8);
+    const k = new Uint8Array(bits);
+    // confere se a senha abriu este bloco
+    if (t.every((v, i) => v === k[c.length + i])) {
+      return new TextDecoder().decode(c.map((v, i) => v ^ k[i])).trim();
+    }
+  }
+  return null;
+}
+
+document.getElementById("ok").onclick = async () => {
+  const res = document.getElementById("res");
+  const senha = document.getElementById("senha").value.trim().toUpperCase();
+  res.textContent = "Abrindo...";
+  const amigo = await abrir(senha);
+  res.innerHTML = amigo ? "Seu amigo secreto é:<b></b>" : "Senha incorreta";
+  if (amigo) res.querySelector("b").textContent = amigo;
+};
+</script>
+</body>
+</html>
